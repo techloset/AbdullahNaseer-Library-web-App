@@ -9,10 +9,10 @@ function App() {
 
   return (
     <body className=' mx-6 lg:mx-36'>
-    {/* <Navbar/>
+    <Navbar/>
     <Card/>
     <Newsletter/>
-    <Footer/> */}
+    <Footer/>
     <HeroGrid/>
     </body>
   )
