@@ -1,21 +1,16 @@
-import './App.css'
-import Card from './components/Card'
-import Footer from './components/Footer'
-import HeroGrid from './components/HeroGrid'
-import Navbar from './components/Navbar'
-import Newsletter from './components/NewsLetter'
+import React from 'react';
+import './App.css';
+import Footer from './components/Footer';
+import Navbar from './components/Navbar';
+import Home from './pages/Home';
 
 function App() {
-
   return (
-    <body className=' mx-6 lg:mx-36'>
-    <Navbar/>
-    <Card/>
-    <Newsletter/>
-    <Footer/>
-    <HeroGrid/>
-    </body>
-  )
+      // <Home />
+      <>
+      </>
+
+  );
 }
 
-export default App
+export default App;
