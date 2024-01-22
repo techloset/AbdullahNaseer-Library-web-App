@@ -2,17 +2,17 @@ import React from 'react';
 
 const Card = () => {
     return (
-        <div className="w-[358px] h-[260px] rounded-md flex border-2">
-            <div className="flex-1">
+        <div className="relative w-[270px] h-[312px] md:w-[358px] md:h-[260px] rounded-md md:flex md:flex-row border-2">
+            <div className="absolute md:static w-[92px] h-[137px] left-20 top-[-30px] md:h-auto md:w-auto md:flex-1">
                 <img className='w-full h-full object-cover rounded-t-md' src="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_1280.jpg" alt="picture" />
             </div>
-            <div className="flex-1 p-4 flex flex-col justify-between">
+            <div className="mt-[132px] md:mt-0 md:flex-1 p-4 flex flex-col justify-between text-center md:text-left">
                 <div>
                     <p className="text-lg font-bold mb-2">The World of Abstract Art</p>
                     <p className="text-gray-500 text-sm">Art & Design</p>
-                    <p className="text-[#1565D8] text-sm mt-11 font-bold">$25.00</p>
+                    <p className="text-[#1565D8] text-sm mt-6 font-bold">$25.00</p>
                 </div>
-                <div className="flex justify-between items-center mt-4">
+                <div className="flex justify-between items-center mt-2 md:mt-3">
                     <button className="bg-blue-500 text-white text-sm px-4 py-2 rounded-full">Buy Now</button>
                     <button className="pr-4 py-2 rounded-md">
                         <svg width="18" height="17" viewBox="0 0 18 17" fill="none" xmlns="http://www.w3.org/2000/svg">
