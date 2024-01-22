@@ -10,12 +10,9 @@ const Home = () => {
     return (
         <div className=' mx-6 lg:mx-36'>
             <Navbar />
-            {/* <Card /> */}
-            {/* <NewsLetter /> */}
-            {/* <HeroGrid /> */}
-            {/* <ServiceSection /> */}
-            {/* <Footer /> */}
             <HeroGrid/>
+            <ServiceSection/>
+            <NewsLetter/>
         </div>
     )
 }
