@@ -198,11 +198,11 @@ const Navbar: React.FC = () => {
             </div>
           )}
         </div>
-        <Link to="/bookdeails">Docs</Link>
-        <Link to="/search">Help</Link>
-        <button className="border-2 border-[#1565D8] text-[#1565D8] px-6 py-1 rounded-md">
+        <Link to="/">Docs</Link>
+        <Link to="/">Help</Link>
+        <Link to='/bookdetails' className="border-2 border-[#1565D8] text-[#1565D8] px-6 py-1 rounded-md">
           Search
-        </button>
+        </Link>
       </div>
     </nav>
   );
