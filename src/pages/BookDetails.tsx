@@ -1,11 +1,16 @@
 import React from 'react';
 import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
+import RelatedBook from '../components/RelatedBook';
 
 const BookDetails = () => {
   return (
-    <div className='mx-6 lg:mx-36'>
+    <div className=''>
+      <div className=' mx-6 lg:mx-36'>
       <Navbar />
-      <div className="mt-28 mx-auto sm:px-6 ">
+      </div>
+      
+      <div className="mt-28 mx-aut sm:px-6  mx-6 lg:mx-36">
         <div className="flex flex-col md:flex-row justify-between mx-4">
           <div className="md:flex-1 px-4 text-center md:text-left mt-4  mb-8 md:mb-0">
             <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-5">
@@ -39,6 +44,8 @@ const BookDetails = () => {
           </div>
         </div>
       </div>
+      <RelatedBook/>
+      <Footer />
     </div>
   );
 };
