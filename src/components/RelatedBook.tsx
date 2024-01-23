@@ -5,7 +5,7 @@ const RelatedBook = () => {
   return (
     <div className='parent bg-[#183B56] h-[548px] mt-7 md:mt-24 md:px-36'>
       <div className='flex justify-between pt-12 md:pt-14'>
-        <div className='text text-white text-3xl font-bold'>Related Books</div>
+        <div className='text text-white text-3xl font-bold italic'>Related Books</div>
         <div className='buttons flex '>
           <button className='h-14 w-14 border-2 mx-3 p-2 rounded-full'>
             <img className='mx-auto' src={arrowLeft} alt='Left Arrow' />

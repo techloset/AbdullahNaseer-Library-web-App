@@ -136,7 +136,7 @@ const Navbar: React.FC = () => {
   };
 
   return (
-    <nav className="flex flex-col md:flex-row justify-between items-center mt-6">
+    <nav className="flex flex-col md:flex-row justify-between items-center mt-6 text-customTextColour font-semibold text-base">
       <div className="flex justify-between md:flex w-full">
         {/* Logo */}
         <img src={logo} alt="Logo" className="mr-4" />
@@ -151,7 +151,7 @@ const Navbar: React.FC = () => {
           } md:flex md:flex-row md:space-x-12 mt-3 md:mt-0 transition-all ease-in-out duration-300`}
         onClick={closeDropdowns}
       >
-        <a href="/">Home</a>
+        <Link to="/">Home</Link>
         {/* Landings Dropdown */}
         <div
           className="relative group"
@@ -200,7 +200,7 @@ const Navbar: React.FC = () => {
         </div>
         <Link to="/">Docs</Link>
         <Link to="/bookdetails">Help</Link>
-        <Link to='/search' className="border-2 border-[#1565D8] text-[#1565D8] px-6 py-1 rounded-md">
+        <Link to='/search' className="border-2 border-linkColour text-linkColour px-6 py-1 rounded-md">
           Search
         </Link>
       </div>

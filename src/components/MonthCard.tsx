@@ -7,9 +7,9 @@ const MonthCard = () => {
             </div>
             <div className="mt-[132px] md:mt-0 md:flex-1 p-4 flex flex-col justify-between text-center md:text-left">
                 <div>
-                    <p className="text-lg font-bold mb-2">The World of Abstract Art</p>
-                    <p className="text-gray-500 text-sm">Art & Design</p>
-                    <p className="text-[#1565D8] text-sm mt-6 font-bold">$25.00</p>
+                    <p className="text-lg font-bold italic text-customTextColour mb-2">The World of Abstract Art</p>
+                    <p className=" text-customTextColour text-base font-thin">Art & Design</p>
+                    <p className="text-linkColour italic text-sm mt-6 font-bold">$25.00</p>
                 </div>
                 <div className="flex justify-between items-center mt-2 md:mt-3">
                     <button className="bg-blue-500 text-white text-sm px-4 py-2 rounded-full">Buy Now</button>
