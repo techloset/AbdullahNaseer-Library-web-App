@@ -11,8 +11,8 @@ const BookDetails: React.FC = () => {
       <div className="mt-28 mx-aut sm:px-6  mx-6 lg:mx-36">
         <div className="flex flex-col md:flex-row justify-between mx-4">
           <div className="md:flex-1 px-4 text-center md:text-left mt-4  mb-8 md:mb-0">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-5">
-              <span className="text-[#FAAD13]">Design Theory:</span>
+            <h2 className="text-3xl md:text-5xl font-bold italic leading-[60px] text-customTextColour mb-5">
+              <span className="text-[#FAAD13] ">Design Theory:</span>
               <br />
               The Psychology of <br />
               Graphic Design Pricing
