@@ -111,6 +111,7 @@
 import React, { useState } from 'react';
 import logo from "../assets/logo.svg";
 import hamBurger from "../assets/hamBurger.svg";
+import { Link } from 'react-router-dom';
 
 const Navbar: React.FC = () => {
   const [isMenuOpen, setMenuOpen] = useState<boolean>(false);
@@ -197,8 +198,8 @@ const Navbar: React.FC = () => {
             </div>
           )}
         </div>
-        <a href="/help">Docs</a>
-        <a href="/help">Help</a>
+        <Link to="/bookdeails">Docs</Link>
+        <Link to="/search">Help</Link>
         <button className="border-2 border-[#1565D8] text-[#1565D8] px-6 py-1 rounded-md">
           Search
         </button>
