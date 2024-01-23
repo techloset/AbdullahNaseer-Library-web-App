@@ -10,9 +10,19 @@ const Home = () => {
     return (
         <div className=' mx-6 lg:mx-36'>
             <Navbar />
-            <HeroGrid/>
-            <ServiceSection/>
-            <NewsLetter/>
+            <main className=' mt-12'>
+                <HeroGrid />
+                <div className=' mt-12'>
+                <ServiceSection />
+                </div>
+                <div className='mt-12'>
+                <NewsLetter />
+                </div>
+            </main>
+            <div className="mt-12 ">
+
+            <Footer />
+            </div>
         </div>
     )
 }
