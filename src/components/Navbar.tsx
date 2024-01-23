@@ -199,8 +199,8 @@ const Navbar: React.FC = () => {
           )}
         </div>
         <Link to="/">Docs</Link>
-        <Link to="/">Help</Link>
-        <Link to='/bookdetails' className="border-2 border-[#1565D8] text-[#1565D8] px-6 py-1 rounded-md">
+        <Link to="/bookdetails">Help</Link>
+        <Link to='/search' className="border-2 border-[#1565D8] text-[#1565D8] px-6 py-1 rounded-md">
           Search
         </Link>
       </div>
