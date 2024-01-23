@@ -1,6 +1,4 @@
-import React from 'react';
 import Card from './Card';
-import MonthCard from './MonthCard';
 import Aside from './Aside';
 
 const HeroGrid = () => {
