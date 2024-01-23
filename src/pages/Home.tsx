@@ -1,5 +1,3 @@
-import React from 'react'
-import Card from '../components/Card'
 import NewsLetter from '../components/NewsLetter'
 import HeroGrid from '../components/HeroGrid'
 import ServiceSection from '../components/ServiceSection'
@@ -20,7 +18,6 @@ const Home = () => {
                 </div>
             </main>
             <div className="mt-12 ">
-
             <Footer />
             </div>
         </div>

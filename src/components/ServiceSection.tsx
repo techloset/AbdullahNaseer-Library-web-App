@@ -48,7 +48,6 @@
 
 
 
-import React from 'react';
 import serviceArrow from '../assets/serviceArrow.svg';
 import buttonArrow from '../assets/buttonArrow.svg';
 

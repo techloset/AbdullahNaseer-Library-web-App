@@ -111,7 +111,6 @@
 import React, { useState } from 'react';
 import logo from "../assets/logo.svg";
 import hamBurger from "../assets/hamBurger.svg";
-import dropDown from "../assets/dropDown.svg";
 
 const Navbar: React.FC = () => {
   const [isMenuOpen, setMenuOpen] = useState<boolean>(false);

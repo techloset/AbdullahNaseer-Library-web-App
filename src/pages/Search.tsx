@@ -22,7 +22,6 @@
 
 
 
-import React from 'react';
 import SearchGrid from '../components/SearchGrid';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';

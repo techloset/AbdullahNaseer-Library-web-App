@@ -1,5 +1,3 @@
-import React from 'react';
-
 const NewsLetter = () => {
   return (
     <section className='bg-[#1565D8] rounded-md p-4 md:p-8 lg:p-12 xl:p-16 h-auto md:h-56 flex flex-col md:flex-row justify-between items-center'>
