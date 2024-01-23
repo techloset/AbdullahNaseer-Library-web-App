@@ -1,7 +1,7 @@
 import arrowLeft from '../assets/arrowLeft.svg';
 import arrowRight from '../assets/arrowRight.svg';
 
-const RelatedBook = () => {
+const RelatedBook: React.FC = () => {
   return (
     <div className='parent bg-[#183B56] h-[548px] mt-7 md:mt-24 md:px-36'>
       <div className='flex justify-between pt-12 md:pt-14'>

@@ -2,7 +2,7 @@ import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import RelatedBook from '../components/RelatedBook';
 
-const BookDetails = () => {
+const BookDetails: React.FC = () => {
   return (
     <div className=''>
       <div className=' mx-6 lg:mx-36'>

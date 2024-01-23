@@ -1,7 +1,8 @@
 import logo from "../assets/logo.svg";
 
 
-const Footer = () => {
+const Footer: React.FC = () => {
+  
   return (
     <div className="relative mt-16 ">
       <div className="">

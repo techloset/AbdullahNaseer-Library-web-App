@@ -1,7 +1,7 @@
 import Card from './Card';
 import Aside from './Aside';
 
-const HeroGrid = () => {
+const HeroGrid: React.FC = () => {
   return (
     <div className='flex flex-wrap gap-5 items-start justify-center  lg:justify-start'>
       {/* Main content */}

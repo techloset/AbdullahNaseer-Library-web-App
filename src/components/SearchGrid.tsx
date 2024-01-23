@@ -58,7 +58,7 @@
 
 import Card from './Card';
 
-const CardGrid = () => {
+const CardGrid: React.FC = () => {
   return (
     <div className='text-center flex flex-col items-center justify-center'>
       <h3 className='text-3xl mb-6 italic'>Search Results</h3>

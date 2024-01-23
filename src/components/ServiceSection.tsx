@@ -52,7 +52,7 @@ import serviceArrow from '../assets/serviceArrow.svg';
 import buttonArrow from '../assets/buttonArrow.svg';
 
 
-const ServiceSection = () => {
+const ServiceSection: React.FC = () => {
   return (
     <div className="flex flex-wrap justify-center items-center relative">
       {/* Card 1 */}

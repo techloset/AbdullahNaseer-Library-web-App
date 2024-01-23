@@ -1,5 +1,5 @@
 
-const Card = () => {
+const Card: React.FC = () => {
     return (
         <div className="relative w-[270px] h-[312px] md:w-[358px] md:h-[260px] rounded-md md:flex md:flex-row border-2">
             <div className="absolute md:static w-[92px] h-[137px] left-20 top-[-30px] md:h-auto md:w-auto md:flex-1">

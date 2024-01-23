@@ -4,7 +4,7 @@ import ServiceSection from '../components/ServiceSection'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 
-const Home = () => {
+const Home: React.FC = () => {
     return (
         <div className=' mx-6 lg:mx-36'>
             <Navbar />
