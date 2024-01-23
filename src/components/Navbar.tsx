@@ -244,7 +244,9 @@ const Navbar: React.FC = () => {
     <nav className="flex flex-col md:flex-row justify-between items-center mt-6 text-customTextColour font-semibold text-base">
       <div className="flex justify-between md:flex w-full">
         {/* Logo */}
+        <Link to='/'>
         <img src={logo} alt="Logo" className="mr-4" />
+        </Link>
         {/* Hamburger button for small screens */}
         <button className="md:hidden" onClick={toggleMenu}>
           <img src={hamBurger} alt="Logo" className="mr-4" />
