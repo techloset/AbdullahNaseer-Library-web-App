@@ -69,9 +69,9 @@ const Card: React.FC<CardProps> = ({ book }) => {
     const {
         title,
         authors,
-        publishedDate,
-        pageCount,
-        printType,
+        // publishedDate,
+        // pageCount,
+        // printType,
         maturityRating,
         imageLinks,
     } = mergedBook.volumeInfo!; // Non-null assertion, assuming volumeInfo is defined

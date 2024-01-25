@@ -100,7 +100,7 @@ const Aside: React.FC = () => {
   const { isLoading, data, isError } = useSelector((state: RootState) => state.monthBooks);
 
   useEffect(() => {
-    dispatch(fetchMonthBooks({ startIndex: 0, maxResults: 10 })); // Adjust maxResults accordingly
+    dispatch(fetchMonthBooks({ startIndex: 0, maxResults: 5 })); // Adjust maxResults accordingly
   }, [dispatch]);
 
   if (isLoading) {
