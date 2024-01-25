@@ -1,31 +1,51 @@
-// import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, createAsyncThunk, PayloadAction } from "@reduxjs/toolkit";
 
-// const bookSlice = createSlice({
-//     name: 'book'
-// });
-// export default bookSlice.reducer
-
-
-
-import { createSlice, Slice } from "@reduxjs/toolkit";
-
-interface BookState {
-    // Define the state properties here
+interface FetchBooksParams {
+  startIndex: number;
+  maxResults: number;
 }
 
-const initialState: BookState = {
-    // Initialize the state properties here
+interface BooksState {
+  isLoading: boolean;
+  data: any | null; // Replace 'any' with the actual type of your book data
+  isError: boolean;
+}
+
+export const fetchBooks = createAsyncThunk(
+  "fetchBooks",
+  async ({ startIndex, maxResults }: FetchBooksParams) => {
+    const response = await fetch(
+      `https://www.googleapis.com/books/v1/volumes?q=galib:keyes&startIndex=${startIndex}&maxResults=${maxResults}&key=AIzaSyA9HOGeKjPBNtTLUjSXpSKlLy2eixVWGP0`
+    );
+    const data = await response.json();
+    return data;
+  }
+);
+
+const initialState: BooksState = {
+  isLoading: false,
+  data: null,
+  isError: false,
 };
 
-
-const bookSlice: Slice<BookState> = createSlice({
-    name: 'book',
-    initialState,
-    reducers: {
-        // Define the reducers here
-    }
+const booksSlice = createSlice({
+  name: "books",
+  initialState,
+  reducers: {},
+  extraReducers: (builder) => {
+    builder.addCase(fetchBooks.pending, (state) => {
+      state.isLoading = true;
+    });
+    builder.addCase(fetchBooks.rejected, (state, action) => {
+      state.isLoading = false;
+      state.isError = true;
+      console.log("error", (action.payload as PayloadAction));
+    });
+    builder.addCase(fetchBooks.fulfilled, (state, action) => {
+      state.isLoading = false;
+      state.data = action.payload;
+    });
+  },
 });
 
-export default bookSlice.reducer;
-
-
+export default booksSlice.reducer;

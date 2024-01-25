@@ -1,44 +1,126 @@
-// import Card from './Card'
+// // // import Card from './Card'
 
-// const Aside = () => {
+// // // const Aside = () => {
+// // //   return (
+// // //     <aside className='w-full md:w-1/4 p-4 flex flex-col items-center gap-5'>
+// // //     <div>
+// // //       <h1 className="font-bold italic text-4xl text-customTextColour mb-5">Best This Month</h1>
+// // //       <div className='flex flex-col gap-5 items-center border-gray-200 p-4 rounded-md'>
+// // //         {/* <MonthCard />
+// // //         <MonthCard />
+// // //         <MonthCard /> */}
+// // //         <Card/>
+// // //         <Card/>
+// // //         <Card/>
+// // //       </div>
+// // //       <hr className='mx-7 my-4' />
+// // //       <button className='block italic font-semibold mx-auto w-[350px] h-auto text-linkColour text-lg'>
+// // //         See More
+// // //       </button>
+// // //     </div>
+// // //   </aside>
+// // //   )
+// // // }
+
+// // // export default Aside
+
+
+// // import Card from './Card';
+
+// // const Aside: React.FC = () => {
+// //   return (
+// //     <aside className='w-full md:w-1/4 p-4 flex flex-col items-center gap-5'>
+// //       <div>
+// //         <h1 className="font-bold italic text-4xl text-customTextColour mb-5">Best This Month</h1>
+// //         <div className='flex flex-col gap-5 items-center border-gray-200 p-4 rounded-md'>
+// //           {/* <MonthCard />
+// //           <MonthCard />
+// //           <MonthCard /> */}
+// //           <Card/>
+// //           <Card/>
+// //           <Card/>
+// //         </div>
+// //         <hr className='mx-7 my-4' />
+// //         <button className='block italic font-semibold mx-auto w-[350px] h-auto text-linkColour text-lg'>
+// //           See More
+// //         </button>
+// //       </div>
+// //     </aside>
+// //   );
+// // };
+
+// // export default Aside;
+
+
+
+
+// import React from 'react';
+// import { useSelector } from 'react-redux';
+// import { RootState } from '../redux/store'; // Adjust the path accordingly
+// import Card from './Card';
+// import MonthCard from './MonthCard';
+
+// const Aside: React.FC = () => {
+//   const bestThisMonthBooks = useSelector((state: RootState) => state.books.data?.items || []);
+
 //   return (
 //     <aside className='w-full md:w-1/4 p-4 flex flex-col items-center gap-5'>
-//     <div>
-//       <h1 className="font-bold italic text-4xl text-customTextColour mb-5">Best This Month</h1>
-//       <div className='flex flex-col gap-5 items-center border-gray-200 p-4 rounded-md'>
-//         {/* <MonthCard />
-//         <MonthCard />
-//         <MonthCard /> */}
-//         <Card/>
-//         <Card/>
-//         <Card/>
+//       <div>
+//         <h1 className="font-bold italic text-4xl text-customTextColour mb-5">Best This Month</h1>
+//         <div className='flex flex-col gap-5 items-center border-gray-200 p-4 rounded-md'>
+//           {bestThisMonthBooks.map((book: any) => (
+//             // <Card key={book.id} book={book} />
+//             <MonthCard key={book.id} book={book} />
+//           ))}
+//         </div>
+//         <hr className='mx-7 my-4' />
+//         <button className='block italic font-semibold mx-auto w-[350px] h-auto text-linkColour text-lg'>
+//           See More
+//         </button>
 //       </div>
-//       <hr className='mx-7 my-4' />
-//       <button className='block italic font-semibold mx-auto w-[350px] h-auto text-linkColour text-lg'>
-//         See More
-//       </button>
-//     </div>
-//   </aside>
-//   )
-// }
+//     </aside>
+//   );
+// };
 
-// export default Aside
+// export default Aside;
 
 
-import Card from './Card';
+
+
+
+// Aside.tsx
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { RootState, AppDispatch } from '../redux/store';
+import { fetchMonthBooks } from '../redux/slices/monthSlice'; // Adjust the path accordingly
+import MonthCard from './MonthCard';
 
 const Aside: React.FC = () => {
+  const dispatch: AppDispatch = useDispatch();
+  const { isLoading, data, isError } = useSelector((state: RootState) => state.monthBooks);
+
+  useEffect(() => {
+    dispatch(fetchMonthBooks({ startIndex: 0, maxResults: 10 })); // Adjust maxResults accordingly
+  }, [dispatch]);
+
+  if (isLoading) {
+    return <div>Loading...</div>;
+  }
+
+  if (isError) {
+    return <div>Error loading aside books</div>;
+  }
+
+  const asideBooks = data?.items || [];
+
   return (
     <aside className='w-full md:w-1/4 p-4 flex flex-col items-center gap-5'>
       <div>
         <h1 className="font-bold italic text-4xl text-customTextColour mb-5">Best This Month</h1>
         <div className='flex flex-col gap-5 items-center border-gray-200 p-4 rounded-md'>
-          {/* <MonthCard />
-          <MonthCard />
-          <MonthCard /> */}
-          <Card/>
-          <Card/>
-          <Card/>
+          {asideBooks.map((book: any) => (
+            <MonthCard key={book.id} book={book} />
+          ))}
         </div>
         <hr className='mx-7 my-4' />
         <button className='block italic font-semibold mx-auto w-[350px] h-auto text-linkColour text-lg'>
@@ -50,5 +132,3 @@ const Aside: React.FC = () => {
 };
 
 export default Aside;
-
-

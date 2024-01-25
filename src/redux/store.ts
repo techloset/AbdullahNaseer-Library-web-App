@@ -1,8 +1,10 @@
 import { configureStore } from '@reduxjs/toolkit'
 import booksReducer from "./slices/books"
+import monthReducer from "./slices/monthSlice"
 export const store = configureStore({
     reducer: {
-        books: booksReducer
+        books: booksReducer,
+        monthBooks: monthReducer
     },
 })
 
