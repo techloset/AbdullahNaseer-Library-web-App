@@ -123,12 +123,6 @@ const RelatedBook: React.FC = () => {
     dispatch(fetchBooks({ startIndex, maxResults }));
   }, [dispatch, startIndex, maxResults]);
 
-  const loadMoreResults = () => {
-    setStartIndex(startIndex + maxResults);
-    setMaxResults(maxResults + 10);
-    dispatch(fetchBooks({ startIndex, maxResults: maxResults + 10 }));
-  };
-
   const books = data?.items || [];
 
   return (
