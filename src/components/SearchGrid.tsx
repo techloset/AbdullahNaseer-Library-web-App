@@ -96,6 +96,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { RootState, AppDispatch } from '../redux/store';
 import { searchBooks } from '../redux/slices/searchBoookSlice'; // Adjust the path accordingly
 import Card from './Card';
+import { Link } from 'react-router-dom';
 
 const CardGrid: React.FC = () => {
   const dispatch: AppDispatch = useDispatch();
@@ -150,10 +151,17 @@ const CardGrid: React.FC = () => {
         ) : (
           <div className="grid gap-6 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1">
             {data?.items?.map((book: any) => (
-              <Card key={book.id} book={book} />
+              <Link to={`/bookdetails/${book.id}`}>
+                <Card key={book.id} book={book} />
+              </Link>
             ))}
           </div>
         )}
+        {/* <div key={book.id} className='inline-block mr-4 mb-5'>
+              <Link to={`/bookdetails/${book.id}`}>
+                <Card book={book} />
+              </Link>
+            </div> */}
 
         {!isLoading && !isError && (
           <button

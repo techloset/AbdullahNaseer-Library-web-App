@@ -15,7 +15,7 @@ export const fetchBooks = createAsyncThunk(
   "fetchBooks",
   async ({ startIndex, maxResults }: FetchBooksParams) => {
     const response = await fetch(
-      `https://www.googleapis.com/books/v1/volumes?q=galib:keyes&startIndex=${startIndex}&maxResults=${maxResults}&key=AIzaSyA9HOGeKjPBNtTLUjSXpSKlLy2eixVWGP0`
+      `https://www.googleapis.com/books/v1/volumes?q=harrypotter:keyes&startIndex=${startIndex}&maxResults=${maxResults}&key=AIzaSyA9HOGeKjPBNtTLUjSXpSKlLy2eixVWGP0`
     );
     const data = await response.json();
     return data;

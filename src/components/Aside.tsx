@@ -94,6 +94,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { RootState, AppDispatch } from '../redux/store';
 import { fetchMonthBooks } from '../redux/slices/monthSlice'; // Adjust the path accordingly
 import MonthCard from './MonthCard';
+import Loader from './Loader';
 
 const Aside: React.FC = () => {
   const dispatch: AppDispatch = useDispatch();
@@ -102,14 +103,6 @@ const Aside: React.FC = () => {
   useEffect(() => {
     dispatch(fetchMonthBooks({ startIndex: 0, maxResults: 5 })); // Adjust maxResults accordingly
   }, [dispatch]);
-
-  if (isLoading) {
-    return <div>Loading...</div>;
-  }
-
-  if (isError) {
-    return <div>Error loading aside books</div>;
-  }
 
   const asideBooks = data?.items || [];
 
@@ -121,6 +114,18 @@ const Aside: React.FC = () => {
           {asideBooks.map((book: any) => (
             <MonthCard key={book.id} book={book} />
           ))}
+          {isLoading ? (
+          <div className=' flex justify-center items-center'><Loader/></div>
+        ) : isError ? (
+          <div>Something went wrong</div>
+        ) : (
+          <button
+            // onClick={loadMoreResults}
+            className='block mx-auto w-64 h-12 md:h-16 md:w-[60%] text-[#1565D8] text-md font-bold rounded-md bg-[#b5cef0]'
+          >
+            See More
+          </button>
+        )}
         </div>
         <hr className='mx-7 my-4' />
         <button className='block italic font-semibold mx-auto w-[350px] h-auto text-linkColour text-lg'>
