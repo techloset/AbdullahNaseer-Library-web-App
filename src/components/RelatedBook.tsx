@@ -83,7 +83,7 @@ const RelatedBook: React.FC = () => {
             <div key={book.id} className='inline-block mr-4 mb-5'>
               <Link to={`/bookdetails/${book.id}`}>
                 <div className='inline-block h-[298px] w-[204px] bg-red-500 rounded-md mr-4'>
-                  <img className='object-cover inline-block h-[298px] w-[204px] bg-red-500 rounded-md' src={book.volumeInfo.imageLinks?.thumbnail} alt='Book Cover' />
+                  <img className='object-cover inline-block w-full h-full bg-red-500 rounded-md' src={book.volumeInfo.imageLinks?.thumbnail} alt='Book Cover' />
                 </div>
               </Link>
             </div>

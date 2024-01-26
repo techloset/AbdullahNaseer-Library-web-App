@@ -97,6 +97,7 @@ import { RootState, AppDispatch } from '../redux/store';
 import { searchBooks } from '../redux/slices/searchBoookSlice'; // Adjust the path accordingly
 import Card from './Card';
 import { Link } from 'react-router-dom';
+import Loader from './Loader';
 
 const CardGrid: React.FC = () => {
   const dispatch: AppDispatch = useDispatch();
@@ -145,7 +146,7 @@ const CardGrid: React.FC = () => {
         <h3 className='text-3xl mb-6 italic'>Search Results</h3>
 
         {isLoading ? (
-          <div>Loading your Books</div>
+          <div className='flex justify-center'><Loader/></div>
         ) : isError ? (
           <div>Error searching books</div>
         ) : (

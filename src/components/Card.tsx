@@ -63,6 +63,14 @@ const defaultBook: Book = {
         },
     },
 };
+const trimText = (text: string, wordCount: number): string => {
+    const words = text.split(' ');
+    if (words.length > wordCount) {
+        return words.slice(0, wordCount).join(' ') + '...';
+    }
+    return text;
+};
+
 
 const Card: React.FC<CardProps> = ({ book }) => {
     const mergedBook = { ...defaultBook, ...book };
@@ -75,18 +83,20 @@ const Card: React.FC<CardProps> = ({ book }) => {
         maturityRating,
         imageLinks,
     } = mergedBook.volumeInfo!; // Non-null assertion, assuming volumeInfo is defined
+    
+    const trimmedTitle = trimText(title || '', 8);
 
     return (
         <div className="relative w-[270px] h-[312px] md:w-[358px] md:h-[260px] rounded-md md:flex md:flex-row border-2">
-            <div className="absolute md:static w-[92px] h-[137px] left-20 top-[-30px] md:h-auto md:w-auto md:flex-1">
+            <div className="absolute bg-red-500 rounded-t-md md:static w-[92px] h-[137px] left-20 top-[-30px] md:h-auto md:w-auto md:flex-1">
                 <img className='w-full h-full object-cover rounded-t-md' src={imageLinks?.thumbnail} alt="picture" />
             </div>
             <div className="mt-[132px] md:mt-0 md:flex-1 p-4 flex flex-col justify-between text-center md:text-left">
                 <div>
-                    <p className="text-lg font-bold mb-2 text-customTextColour italic text-wrap">
-                        {title}
+                    <p className="text-lg font-bold mb-2 text-customTextColour italic text-wrap overflow-hidden">
+                        {trimmedTitle}
                     </p>
-                    <p className="font-thin text-customTextColour text-base overflow-hidden">
+                    <p className="font-thin text-customTextColour text-base overflow-hidden text-wrap">
                         {authors?.join(', ')}
                     </p>
                     <p className="text-linkColour text-sm mt-6 italic font-bold">
