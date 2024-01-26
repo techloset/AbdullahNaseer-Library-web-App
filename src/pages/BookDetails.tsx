@@ -133,7 +133,9 @@ const BookDetails: React.FC = () => {
       </div>
     </div>
     <RelatedBook/>
+    <div className='mx-6 lg:mx-36'>
     <Footer />
+    </div>
   </div>
   );
 };
