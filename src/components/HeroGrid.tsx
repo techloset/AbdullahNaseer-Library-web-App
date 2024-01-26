@@ -85,6 +85,7 @@ import { RootState, AppDispatch } from '../redux/store';
 import { fetchBooks } from '../redux/slices/books';
 import Card from './Card';
 import Aside from './Aside';
+import { Link } from 'react-router-dom';
 
 const HeroGrid: React.FC = () => {
   const dispatch: AppDispatch = useDispatch();
@@ -112,7 +113,10 @@ const HeroGrid: React.FC = () => {
         <div className='slider pt-8 md:pt-0 mt-5 md:mt-0 overflow-x-auto whitespace-nowrap mx-auto no-scrollbar md:flex md:flex-wrap'>
           {books.map((book: any) => (
             <div key={book.id} className='inline-block mr-4 mb-5'>
-              <Card book={book} />
+              {/* <Card book={book} /> */}
+              <Link to={`/bookdetails/${book.id}`}>
+                <Card book={book} />
+              </Link>
             </div>
           ))}
         </div>
