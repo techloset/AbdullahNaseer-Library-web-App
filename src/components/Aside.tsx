@@ -95,6 +95,7 @@ import { RootState, AppDispatch } from '../redux/store';
 import { fetchMonthBooks } from '../redux/slices/monthSlice'; // Adjust the path accordingly
 import MonthCard from './MonthCard';
 import Loader from './Loader';
+import { Link } from 'react-router-dom';
 
 const Aside: React.FC = () => {
   const dispatch: AppDispatch = useDispatch();
@@ -112,8 +113,11 @@ const Aside: React.FC = () => {
         <h1 className="font-bold italic text-4xl text-customTextColour mb-5">Best This Month</h1>
         <div className='flex flex-col gap-5 items-center border-gray-200 p-4 rounded-md'>
           {asideBooks.map((book: any) => (
+            <Link to={`/bookdetails/${book.id}`}>
             <MonthCard key={book.id} book={book} />
+            </Link>
           ))}
+          
           {isLoading ? (
           <div className=' flex justify-center items-center'><Loader/></div>
         ) : isError ? (

@@ -157,12 +157,6 @@ const CardGrid: React.FC = () => {
             ))}
           </div>
         )}
-        {/* <div key={book.id} className='inline-block mr-4 mb-5'>
-              <Link to={`/bookdetails/${book.id}`}>
-                <Card book={book} />
-              </Link>
-            </div> */}
-
         {!isLoading && !isError && (
           <button
             onClick={loadMoreResults}
