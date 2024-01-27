@@ -16,7 +16,7 @@ interface SearchState {
 export const searchBooks = createAsyncThunk(
   "searchBooks",
   async ({ query, startIndex, maxResults }: SearchBooksParams) => {
-    const response = await fetch(`https://www.googleapis.com/books/v1/volumes?q=${query}:keyes&startIndex=${startIndex}&maxResults=${maxResults}&key=AIzaSyAh5e1GBOEF4rslFCEeDzeKbK6Qr2uJqjI`);
+    const response = await fetch(`https://www.googleapis.com/books/v1/volumes?q=${query}:keyes&startIndex=${startIndex}&maxResults=${maxResults}&key=${import.meta.env.VITE_APIKEY}`);
     const data = await response.json();
     return data;
   }

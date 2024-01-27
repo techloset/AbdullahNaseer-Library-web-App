@@ -17,7 +17,7 @@ interface MonthState {
 export const fetchMonthBooks = createAsyncThunk(
   "fetchMonthBooks", // Correct action type
   async ({ startIndex, maxResults }: FetchMonthBooksParams) => {
-    const response = await fetch(`https://www.googleapis.com/books/v1/volumes?q=rich+dad:keyes&startIndex=${startIndex}&maxResults=${maxResults}&key=AIzaSyAh5e1GBOEF4rslFCEeDzeKbK6Qr2uJqjI`);
+    const response = await fetch(`https://www.googleapis.com/books/v1/volumes?q=rich+dad:keyes&startIndex=${startIndex}&maxResults=${maxResults}&key=${import.meta.env.VITE_APIKEY}`);
     const data = await response.json();
     return data;
   }

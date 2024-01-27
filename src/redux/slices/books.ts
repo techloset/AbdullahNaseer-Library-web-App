@@ -15,7 +15,7 @@ export const fetchBooks = createAsyncThunk(
   "fetchBooks",
   async ({ startIndex, maxResults }: FetchBooksParams) => {
     const response = await fetch(
-      `https://www.googleapis.com/books/v1/volumes?q=science:keyes&startIndex=${startIndex}&maxResults=${maxResults}&key=AIzaSyAh5e1GBOEF4rslFCEeDzeKbK6Qr2uJqjI`
+      `https://www.googleapis.com/books/v1/volumes?q=science:keyes&startIndex=${startIndex}&maxResults=${maxResults}&key=${import.meta.env.VITE_APIKEY}`
     );
     const data = await response.json();
     return data;
