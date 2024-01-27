@@ -11,6 +11,8 @@ interface MonthState {
   data: any | null;
   isError: boolean;
 }
+// const apikey = process.env.APIKEY
+// const apikey = import.meta.env.APIKEY
 
 export const fetchMonthBooks = createAsyncThunk(
   "fetchMonthBooks", // Correct action type

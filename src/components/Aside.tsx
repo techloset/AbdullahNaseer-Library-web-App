@@ -108,7 +108,7 @@ const Aside: React.FC = () => {
   const asideBooks = data?.items || [];
 
   return (
-    <aside className='w-full md:w-1/4 p-4 flex flex-col items-center gap-5'>
+    <aside className='text-center w-full md:w-1/4 p-4 flex flex-col items-center gap-5'>
       <div>
         <h1 className="font-bold italic text-4xl text-customTextColour mb-5">Best This Month</h1>
         <div className='flex flex-col gap-5 items-center border-gray-200 p-4 rounded-md'>
@@ -123,12 +123,7 @@ const Aside: React.FC = () => {
         ) : isError ? (
           <div>Something went wrong</div>
         ) : (
-          <button
-            // onClick={loadMoreResults}
-            className='block mx-auto w-64 h-12 md:h-16 md:w-[60%] text-[#1565D8] text-md font-bold rounded-md bg-[#b5cef0]'
-          >
-            See More
-          </button>
+          <></>
         )}
         </div>
         <hr className='mx-7 my-4' />
