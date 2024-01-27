@@ -1,30 +1,38 @@
-# React + TypeScript + Vite
+### Project Overview
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project utilizes React Vite along with TypeScript for initialization and development. It incorporates the Google Books API for retrieving book data and employs Redux for efficient state management.
 
-Currently, two official plugins are available:
+### Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Home Page**: Displays a landing page for the application.
+- **Book Details Page**: Provides detailed information about a selected book.
+- **Search Page**: Facilitates users to search for books with a functional search feature.
 
-## Expanding the ESLint configuration
+### Technologies Used
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- **React Vite**: A fast build tool for modern web development with React.
+- **TypeScript**: Enhances code quality and provides better developer tooling.
+- **Google Books API**: Utilized for fetching book data.
+- **Redux**: Employed for centralized state management.
 
-- Configure the top-level `parserOptions` property like this:
+### Installation
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+1. Clone the repository: `git clone [repository_url]`
+2. Navigate to the project directory: `cd [project_directory]`
+3. Install dependencies: `npm install`
+4. Start the development server: `npm start`
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+### Usage
+
+- Visit the application's home page to explore available features.
+- Navigate between the Home, Book Details, and Search pages using the provided links.
+- Utilize the search functionality on the Search page to find specific books.
+
+### Contributors
+
+- https://www.mianabdullah.me/
+- https://github.com/AbdullahNaseer01
+
+### License
+
+This project is free for personal use

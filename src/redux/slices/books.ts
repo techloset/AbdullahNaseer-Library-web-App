@@ -7,7 +7,7 @@ interface FetchBooksParams {
 
 interface BooksState {
   isLoading: boolean;
-  data: any | null; // Replace 'any' with the actual type of your book data
+  data: any | null; 
   isError: boolean;
 }
 
