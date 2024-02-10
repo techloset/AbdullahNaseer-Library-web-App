@@ -12,8 +12,8 @@ import {Book} from "../Types/types"
 const HeroGrid: React.FC = () => {
   const dispatch: AppDispatch = useDispatch();
   const { isLoading, data, isError } = useSelector((state: RootState) => state.books);
-  const [startIndex, setStartIndex] = useState(0);
-  const [maxResults, setMaxResults] = useState(10);
+  const [startIndex, setStartIndex] = useState<number>(0);
+  const [maxResults, setMaxResults] = useState<number>(10);
 
   useEffect(() => {
     dispatch(fetchBooks({ startIndex, maxResults }));
