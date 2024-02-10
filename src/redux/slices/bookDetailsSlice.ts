@@ -1,4 +1,6 @@
+
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+import { Book } from "../../Types/types";
 
 interface FetchBookDetailsParams {
   id: string;
@@ -6,17 +8,17 @@ interface FetchBookDetailsParams {
 
 interface BookDetailsState {
   isLoading: boolean;
-  data: any | null; 
+  data: Book | null;
   isError: boolean;
 }
 
-export const fetchBookDetails = createAsyncThunk(
+export const fetchBookDetails = createAsyncThunk<Book, FetchBookDetailsParams>(
   "bookDetails/fetchBookDetails",
   async ({ id }: FetchBookDetailsParams) => {
     const response = await fetch(
       `https://www.googleapis.com/books/v1/volumes/${id}`
     );
-    const data = await response.json();
+    const data: Book = await response.json();
     return data;
   }
 );

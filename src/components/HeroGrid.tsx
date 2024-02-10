@@ -1,3 +1,4 @@
+
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState, AppDispatch } from '../redux/store';
@@ -6,6 +7,7 @@ import Card from './Card';
 import Aside from './Aside';
 import { Link } from 'react-router-dom';
 import Loader from './Loader';
+import {Book} from "../Types/types"
 
 const HeroGrid: React.FC = () => {
   const dispatch: AppDispatch = useDispatch();
@@ -32,7 +34,7 @@ const HeroGrid: React.FC = () => {
       <div className='w-full md:w-2/3 md:mt-4'>
         <h1 className='font-bold italic text-4xl text-[#183B56] mb-5'>Recommended Books</h1>
         <div className='slider pt-8 md:pt-0 mt-5 md:mt-0 overflow-x-auto whitespace-nowrap mx-auto no-scrollbar md:flex md:flex-wrap gap-8'>
-          {books.map((book: any) => (
+          {books.map((book: Book) => (
             <div key={book.id} className='inline-block mr-4 md:mr-0'>
               <Link to={`/bookdetails/${book.id}`}>
                 <Card book={book} />
@@ -61,3 +63,5 @@ const HeroGrid: React.FC = () => {
   );
 };
 export default HeroGrid;
+
+

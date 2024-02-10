@@ -1,5 +1,5 @@
-// monthSlice.ts
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+import { Book } from "../../Types/types"; // Import the Book interface
 
 interface FetchMonthBooksParams {
   startIndex: number;
@@ -8,17 +8,16 @@ interface FetchMonthBooksParams {
 
 interface MonthState {
   isLoading: boolean;
-  data: any | null;
+  data: Book[] | null;
   isError: boolean;
 }
 
-
-export const fetchMonthBooks = createAsyncThunk(
+export const fetchMonthBooks = createAsyncThunk<Book[], FetchMonthBooksParams>(
   "fetchMonthBooks",
   async ({ startIndex, maxResults }: FetchMonthBooksParams) => {
     const response = await fetch(`https://www.googleapis.com/books/v1/volumes?q=rich+dad:keyes&startIndex=${startIndex}&maxResults=${maxResults}&key=${import.meta.env.VITE_APIKEY}`);
     const data = await response.json();
-    return data;
+    return data.items as Book[]; 
   }
 );
 

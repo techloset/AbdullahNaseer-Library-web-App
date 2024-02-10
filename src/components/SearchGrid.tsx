@@ -1,29 +1,28 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState, AppDispatch } from '../redux/store';
-import { searchBooks } from '../redux/slices/searchBoookSlice'; // Adjust the path accordingly
+import { searchBooks } from '../redux/slices/searchBoookSlice'; // Importing searchBooks action from searchSlice
 import Card from './Card';
 import { Link } from 'react-router-dom';
 import Loader from './Loader';
+import { Book } from "../Types/types"; // Import Book interface
 
-const CardGrid: React.FC = () => {
+const SearchGrid: React.FC = () => {
   const dispatch: AppDispatch = useDispatch();
   const [query, setQuery] = useState('');
   const [startIndex, setStartIndex] = useState(0);
   const [maxResults, setMaxResults] = useState(10);
 
-  // Fetch search results from Redux store
   const { isLoading, data, isError } = useSelector((state: RootState) => state.searchBooks);
 
-  // Dispatch searchBooks action on input change
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setQuery(event.target.value);
+    const newQuery = event.target.value;
+    setQuery(newQuery);
     setStartIndex(0);
     setMaxResults(10);
-    dispatch(searchBooks({ query: event.target.value, startIndex: 0, maxResults: 10 }));
+    dispatch(searchBooks({ query: newQuery, startIndex: 0, maxResults: 10 }));
   };
 
-  // Function to load more results
   const loadMoreResults = () => {
     setStartIndex(startIndex + maxResults);
     setMaxResults(maxResults + 10);
@@ -31,7 +30,6 @@ const CardGrid: React.FC = () => {
   };
 
   useEffect(() => {
-    // Load initial results when the component mounts
     dispatch(searchBooks({ query, startIndex, maxResults }));
   }, [dispatch, query, startIndex, maxResults]);
 
@@ -58,9 +56,9 @@ const CardGrid: React.FC = () => {
           <div>Error searching books</div>
         ) : (
           <div className="grid gap-6 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1">
-            {data?.items?.map((book: any) => (
-              <Link to={`/bookdetails/${book.id}`}>
-                <Card key={book.id} book={book} />
+            {data?.items?.map((book: Book) => (
+              <Link key={book.id} to={`/bookdetails/${book.id}`}>
+                <Card book={book} />
               </Link>
             ))}
           </div>
@@ -78,5 +76,4 @@ const CardGrid: React.FC = () => {
   );
 };
 
-export default CardGrid;
-
+export default SearchGrid;

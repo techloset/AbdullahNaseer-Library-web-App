@@ -1,20 +1,6 @@
-import React from 'react';
 
-interface Book {
-    id: string;
-    volumeInfo?: {
-        title?: string;
-        authors?: string[];
-        publishedDate?: string;
-        pageCount?: number;
-        printType?: string;
-        maturityRating?: string;
-        imageLinks?: {
-            smallThumbnail?: string;
-            thumbnail?: string;
-        };
-    };
-}
+import React from 'react';
+import {Book} from "../Types/types"
 
 interface CardProps {
     book: Book;
@@ -49,12 +35,9 @@ const MonthCard: React.FC<CardProps> = ({ book }) => {
     const {
         title,
         authors,
-        // publishedDate,
-        // pageCount,
-        // printType,
         maturityRating,
         imageLinks,
-    } = mergedBook.volumeInfo!; // Non-null assertion, assuming volumeInfo is defined
+    } = mergedBook.volumeInfo!;
     const trimmedTitle = trimText(title || '', 5);
 
     return (
@@ -76,3 +59,4 @@ const MonthCard: React.FC<CardProps> = ({ book }) => {
 };
 
 export default MonthCard;
+

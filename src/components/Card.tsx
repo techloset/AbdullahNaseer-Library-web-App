@@ -1,21 +1,5 @@
 import React from 'react';
-
-interface Book {
-    id: string;
-    volumeInfo?: {
-        title?: string;
-        authors?: string[];
-        publishedDate?: string;
-        pageCount?: number;
-        printType?: string;
-        maturityRating?: string;
-        imageLinks?: {
-            smallThumbnail?: string;
-            thumbnail?: string;
-        };
-    };
-}
-
+import {Book} from "../Types/types"
 interface CardProps {
     book: Book;
 }
@@ -49,12 +33,9 @@ const Card: React.FC<CardProps> = ({ book }) => {
     const {
         title,
         authors,
-        // publishedDate,
-        // pageCount,
-        // printType,
         maturityRating,
         imageLinks,
-    } = mergedBook.volumeInfo!; // Non-null assertion, assuming volumeInfo is defined
+    } = mergedBook.volumeInfo!;
     
     const trimmedTitle = trimText(title || '', 5);
 
@@ -68,9 +49,6 @@ const Card: React.FC<CardProps> = ({ book }) => {
                     <p className="text-lg font-bold md:mb-2 text-customTextColour italic text-wrap overflow-hidden">
                         {trimmedTitle}
                     </p>
-                    {/* <p className="font-thin text-customTextColour text-base overflow-hidden text-wrap">
-                        {authors?.join(', ')}
-                    </p> */}
                     <p className="text-customTextColour text-base font-thin">{authors && authors.length > 0 ? authors[0] : 'Author Not Available'}</p>
 
                     <p className="text-linkColour text-sm mt-2 md:mt-6 italic font-bold">

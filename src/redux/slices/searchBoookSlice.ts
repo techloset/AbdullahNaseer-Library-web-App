@@ -1,14 +1,21 @@
-import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
-interface SearchBooksParams {
+
+import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+import {Book} from "../../Types/types"
+
+export interface SearchBooksParams {
   query: string;
   startIndex: number;
   maxResults: number;
 }
-
-interface SearchState {
+export interface BooksResponse {
+  kind: string;
+  totalItems: number;
+  items: Book[];
+}
+export interface SearchState {
   isLoading: boolean;
-  data: any | null;
+  data: BooksResponse | null;
   isError: boolean;
 }
 

@@ -1,4 +1,11 @@
+
 import { createSlice, createAsyncThunk, PayloadAction } from "@reduxjs/toolkit";
+import {Book} from "../../Types/types"
+interface BooksResponse {
+  kind: string;
+  totalItems: number;
+  items: Book[];
+}
 
 interface FetchBooksParams {
   startIndex: number;
@@ -7,11 +14,11 @@ interface FetchBooksParams {
 
 interface BooksState {
   isLoading: boolean;
-  data: any | null; 
+  data: BooksResponse | null; 
   isError: boolean;
 }
 
-export const fetchBooks = createAsyncThunk(
+export const fetchBooks = createAsyncThunk<BooksResponse, FetchBooksParams>(
   "fetchBooks",
   async ({ startIndex, maxResults }: FetchBooksParams) => {
     const response = await fetch(
@@ -43,7 +50,7 @@ const booksSlice = createSlice({
     });
     builder.addCase(fetchBooks.fulfilled, (state, action) => {
       state.isLoading = false;
-      state.data = action.payload;
+      state.data = action.payload as BooksResponse;
     });
   },
 });
