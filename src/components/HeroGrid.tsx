@@ -16,7 +16,6 @@ const HeroGrid: React.FC = () => {
   const [maxResults, setMaxResults] = useState(10);
 
   useEffect(() => {
-    // Dispatch the fetchBooks action when the component mounts
     dispatch(fetchBooks({ startIndex, maxResults }));
   }, [dispatch, startIndex, maxResults]);
 

@@ -1,5 +1,4 @@
-/** @type {import('tailwindcss').Config} */
-export default {
+module.exports = {
   content: [
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
@@ -7,9 +6,11 @@ export default {
   theme: {
     extend: {
       colors: {
-        customTextColour:"#183B56",
-        linkColour:"#1565D8"
-
+        customTextColour: "#183B56",
+        linkColour: "#1565D8"
+      },
+      fontFamily: {
+        'sans': ['Hanken Grotesk', 'Helvetica', 'Arial', 'sans-serif'],
       },
     },
   },

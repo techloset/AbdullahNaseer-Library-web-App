@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState, AppDispatch } from '../redux/store';
-import { searchBooks } from '../redux/slices/searchBoookSlice'; // Importing searchBooks action from searchSlice
+import { searchBooks } from '../redux/slices/searchBoookSlice';
 import Card from './Card';
 import { Link } from 'react-router-dom';
 import Loader from './Loader';
-import { Book } from "../Types/types"; // Import Book interface
+import { Book } from "../Types/types";
 
 const SearchGrid: React.FC = () => {
   const dispatch: AppDispatch = useDispatch();

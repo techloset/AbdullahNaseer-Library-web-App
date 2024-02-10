@@ -28,23 +28,19 @@ const Navbar: React.FC = () => {
   return (
     <nav className="flex flex-col md:flex-row justify-between items-center mt-6 text-customTextColour font-semibold text-base font-sans">
       <div className="flex justify-between md:flex w-full">
-        {/* Logo */}
         <Link to='/'>
         <img src={logo} alt="Logo" className="mr-4" />
         </Link>
-        {/* Hamburger button for small screens */}
         <button className="md:hidden" onClick={toggleMenu}>
           <img src={hamBurger} alt="Logo" className="mr-4" />
         </button>
       </div>
-      {/* Menu for larger screens or when the menu is open on small screens */}
       <div
         className={`${isMenuOpen ? 'flex flex-col' : 'hidden'
           } md:flex md:flex-row md:space-x-12 mt-3 md:mt-0 transition-all ease-in-out duration-300`}
         onClick={closeDropdowns}
       >
         <Link to="/">Home</Link>
-        {/* Landings Dropdown */}
         <div
           className="relative group"
           onMouseEnter={toggleLandingsDropdown}
@@ -58,16 +54,13 @@ const Navbar: React.FC = () => {
               </svg>
             </span>
           </button>
-          {/* Dropdown Content */}
           {isLandingsDropdownOpen && (
             <div className="absolute hidden md:block mt-2 space-y-2 bg-white border border-gray-200 rounded-md">
               <a href="/landing1">Landing 1</a>
               <a href="/landing2">Landing 2</a>
-              {/* Add more items as needed */}
             </div>
           )}
         </div>
-        {/* Docs Dropdown */}
         <div
           className="relative group"
           onMouseEnter={toggleDocsDropdown}
@@ -81,12 +74,10 @@ const Navbar: React.FC = () => {
               </svg>
             </span>
           </button>
-          {/* Dropdown Content */}
           {isDocsDropdownOpen && (
             <div className="absolute hidden md:block mt-2 space-y-2 bg-white border border-gray-200 rounded-md">
               <a href="/docs1">Docs 1</a>
               <a href="/docs2">Docs 2</a>
-              {/* Add more items as needed */}
             </div>
           )}
         </div>

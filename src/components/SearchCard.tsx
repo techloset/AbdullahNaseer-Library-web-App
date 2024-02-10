@@ -41,12 +41,9 @@ const SearchCard: React.FC<CardProps> = ({ book }) => {
     const {
         title,
         authors,
-        // publishedDate,
-        // pageCount,
-        // printType,
         maturityRating,
         imageLinks,
-    } = mergedBook.volumeInfo!; // Non-null assertion, assuming volumeInfo is defined
+    } = mergedBook.volumeInfo!;
 
     return (
         <div className="relative w-[270px] h-[312px] md:w-[358px] md:h-[260px] rounded-md md:flex md:flex-row border-2">
