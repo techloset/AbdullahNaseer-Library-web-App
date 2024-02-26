@@ -10,7 +10,7 @@ export const fetchBookDetails = createAsyncThunk<Book, FetchBookDetailsParams>(
         `https://www.googleapis.com/books/v1/volumes/${id}`
       );
       return response.data;
-    } catch (error) {
+    } catch (error) { 
       console.error("Error: ", error);
       if (error instanceof Error) {
         throw new Error(error?.message || "Error while fetching data");
