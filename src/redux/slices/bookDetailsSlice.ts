@@ -1,6 +1,6 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
-import { Book } from "../../types/types"; 
+import { Book } from "../../types/types";
 
 interface FetchBookDetailsParams {
   id: string;
@@ -16,10 +16,17 @@ export const fetchBookDetails = createAsyncThunk<Book, FetchBookDetailsParams>(
   "bookDetails/fetchBookDetails",
   async ({ id }: FetchBookDetailsParams) => {
     try {
-      const response = await axios.get(`https://www.googleapis.com/books/v1/volumes/${id}`);
+      const response = await axios.get(
+        `https://www.googleapis.com/books/v1/volumes/${id}`
+      );
       return response.data;
     } catch (error) {
-      throw error;
+      console.error("Error: ", error);
+      if (error instanceof Error) {
+        throw new Error(error?.message || "Error while fetching data");
+      } else {
+        throw new Error("Unknown error occurred");
+      }
     }
   }
 );

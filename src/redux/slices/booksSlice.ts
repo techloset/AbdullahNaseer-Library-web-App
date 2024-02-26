@@ -23,10 +23,19 @@ export const fetchBooks = createAsyncThunk<BooksResponse, FetchBooksParams>(
   "fetchBooks",
   async ({ startIndex, maxResults }: FetchBooksParams) => {
     try {
-      const response = await axios.get(`https://www.googleapis.com/books/v1/volumes?q=science:keyes&startIndex=${startIndex}&maxResults=${maxResults}&key=${import.meta.env.VITE_APIKEY}`);
+      const response = await axios.get(
+        `https://www.googleapis.com/books/v1/volumes?q=science:keyes&startIndex=${startIndex}&maxResults=${maxResults}&key=${
+          import.meta.env.VITE_APIKEY
+        }`
+      );
       return response.data;
     } catch (error) {
-      throw error;
+      console.error("Error: ", error);
+      if (error instanceof Error) {
+        throw new Error(error?.message || "Error while fetching data");
+      } else {
+        throw new Error("Unknown error occurred");
+      }
     }
   }
 );

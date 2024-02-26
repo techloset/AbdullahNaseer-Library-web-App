@@ -1,4 +1,3 @@
-
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 import { Book } from "../../types/types";
@@ -25,10 +24,19 @@ export const searchBooks = createAsyncThunk(
   "searchBooks",
   async ({ query, startIndex, maxResults }: SearchBooksParams) => {
     try {
-      const response = await axios.get(`https://www.googleapis.com/books/v1/volumes?q=${query}:keyes&startIndex=${startIndex}&maxResults=${maxResults}&key=${import.meta.env.VITE_APIKEY}`);
+      const response = await axios.get(
+        `https://www.googleapis.com/books/v1/volumes?q=${query}:keyes&startIndex=${startIndex}&maxResults=${maxResults}&key=${
+          import.meta.env.VITE_APIKEY
+        }`
+      );
       return response.data;
     } catch (error) {
-      throw error;
+      console.error("Error: ", error);
+      if (error instanceof Error) {
+        throw new Error(error?.message || "Error while fetching data");
+      } else {
+        throw new Error("Unknown error occurred");
+      }
     }
   }
 );

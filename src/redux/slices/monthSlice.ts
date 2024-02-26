@@ -17,10 +17,19 @@ export const fetchMonthBooks = createAsyncThunk<Book[], FetchMonthBooksParams>(
   "fetchMonthBooks",
   async ({ startIndex, maxResults }: FetchMonthBooksParams) => {
     try {
-      const response = await axios.get(`https://www.googleapis.com/books/v1/volumes?q=rich+dad:keyes&startIndex=${startIndex}&maxResults=${maxResults}&key=${import.meta.env.VITE_APIKEY}`);
+      const response = await axios.get(
+        `https://www.googleapis.com/books/v1/volumes?q=rich+dad:keyes&startIndex=${startIndex}&maxResults=${maxResults}&key=${
+          import.meta.env.VITE_APIKEY
+        }`
+      );
       return response.data.items as Book[];
     } catch (error) {
-      throw error;
+      console.error("Error: ", error);
+      if (error instanceof Error) {
+        throw new Error(error?.message || "Error while fetching data");
+      } else {
+        throw new Error("Unknown error occurred");
+      }
     }
   }
 );
