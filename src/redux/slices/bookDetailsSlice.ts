@@ -1,17 +1,6 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
-// import { Book } from "../../types/types";
 import { FetchBookDetailsParams, BookDetailsState,Book } from "../../types/types";
-
-// interface FetchBookDetailsParams {
-//   id: string;
-// }
-
-// interface BookDetailsState {
-//   isLoading: boolean;
-//   data: Book | null;
-//   isError: boolean;
-// }
 
 export const fetchBookDetails = createAsyncThunk<Book, FetchBookDetailsParams>(
   "bookDetails/fetchBookDetails",

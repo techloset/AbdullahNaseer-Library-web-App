@@ -1,29 +1,10 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 import {
-  Book,
   SearchBooksParams,
-  BooksResponse,
   SearchState,
 } from "../../types/types";
 
-// export interface SearchBooksParams {
-//   query: string;
-//   startIndex: number;
-//   maxResults: number;
-// }
-
-// export interface BooksResponse {
-//   kind: string;
-//   totalItems: number;
-//   items: Book[];
-// }
-
-// export interface SearchState {
-//   isLoading: boolean;
-//   data: BooksResponse | null;
-//   isError: boolean;
-// }
 
 export const searchBooks = createAsyncThunk(
   "searchBooks",
