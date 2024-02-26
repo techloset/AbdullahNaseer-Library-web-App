@@ -1,17 +1,17 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
-import { Book } from "../../types/types";
+import { Book,FetchMonthBooksParams,MonthState } from "../../types/types";
 
-interface FetchMonthBooksParams {
-  startIndex: number;
-  maxResults: number;
-}
+// interface FetchMonthBooksParams {
+//   startIndex: number;
+//   maxResults: number;
+// }
 
-interface MonthState {
-  isLoading: boolean;
-  data: Book[] | null;
-  isError: boolean;
-}
+// interface MonthState {
+//   isLoading: boolean;
+//   data: Book[] | null;
+//   isError: boolean;
+// }
 
 export const fetchMonthBooks = createAsyncThunk<Book[], FetchMonthBooksParams>(
   "fetchMonthBooks",

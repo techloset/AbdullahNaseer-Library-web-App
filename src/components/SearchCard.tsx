@@ -1,20 +1,6 @@
 import React from 'react';
 
-interface Book {
-    id: string;
-    volumeInfo?: {
-        title?: string;
-        authors?: string[];
-        publishedDate?: string;
-        pageCount?: number;
-        printType?: string;
-        maturityRating?: string;
-        imageLinks?: {
-            smallThumbnail?: string;
-            thumbnail?: string;
-        };
-    };
-}
+import { Book } from "../types/types"
 
 interface CardProps {
     book: Book;
