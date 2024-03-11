@@ -47,7 +47,7 @@ const SearchGrid: React.FC = () => {
   return (
     <>
       <div className="searchHero mt-48 mb-16 text-center text-customTextColour">
-        <h1 className="text-5xl font-bold italic mb-16 ">Search Books</h1>
+        <h1 className="text-3xl lg:text-5xl font-bold italic mb-16 ">Search Books</h1>
         <div className="search w-[236px] h-[46px] md:w-[610px] md:h-[72px] border rounded-lg m-auto">
           <input
             type="text"
@@ -59,7 +59,7 @@ const SearchGrid: React.FC = () => {
         </div>
       </div>
       <div className="text-center flex flex-col justify-center items-center text-customTextColour">
-        <h3 className="text-3xl font-bold mb-6 italic text-start">
+        <h3 className="text-3xl font-bold mb-[48px] italic text-start">
           Search Results
         </h3>
 

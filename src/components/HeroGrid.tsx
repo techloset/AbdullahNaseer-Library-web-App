@@ -31,7 +31,7 @@ const HeroGrid: React.FC = () => {
     <div className="main">
 <div className='flex flex-wrap gap-5 items-start justify-center lg:justify-start'>
       <div className='w-full md:w-2/3 md:mt-4'>
-        <h1 className='font-bold italic text-4xl text-[#183B56] mb-5'>Recommended Books</h1>
+        <h1 className='font-bold italic text-2xl lg:text-4xl text-[#183B56] mb-5'>Recommended Books</h1>
         <div className='slider pt-8 md:pt-0 mt-5 md:mt-0 overflow-x-auto whitespace-nowrap mx-auto no-scrollbar md:flex md:flex-wrap gap-8'>
           {books.map((book: Book) => (
             <div key={book.id} className='inline-block mr-4 md:mr-0'>
@@ -48,7 +48,7 @@ const HeroGrid: React.FC = () => {
         ) : (
           <button
             onClick={loadMoreResults}
-            className='block mx-auto md:mx-0 w-64 h-12 md:h-16 md:w-[91%] text-[#1565D8] text-md font-bold rounded-md mt-6 bg-[#b5cef0]'
+            className='block mx-auto md:mx-0 w-64 h-12 md:h-16 md:w-[97.5%] text-[#1565D8] text-md font-bold rounded-md mt-6 bg-[#b5cef0]'
           >
             See More
           </button>
