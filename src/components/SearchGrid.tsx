@@ -72,7 +72,7 @@ const SearchGrid: React.FC = () => {
         ) : (
           <div className="grid gap-6 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1">
             {data?.items?.map((book: Book) => (
-              <Link key={book.id} to={`/bookdetails/${book.id}`}>
+              <Link className="mt-3" key={book.id} to={`/bookdetails/${book.id}`}>
                 <Card book={book} />
               </Link>
             ))}
