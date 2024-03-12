@@ -11,7 +11,7 @@ module.exports = {
       },
       fontFamily: {
         'sans': ['Hanken Grotesk', 'Helvetica', 'Arial', 'sans-serif'],
-        'Open Sans': ['Open Sans', 'sans-serif'],
+        'Open-Sans': ['Open Sans', 'sans-serif'],
       },
     },
   },

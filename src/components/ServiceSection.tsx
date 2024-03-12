@@ -2,9 +2,7 @@ import serviceArrow from "../assets/serviceArrow.svg";
 import serviceBook from "../assets/serviceBook.svg";
 import serviceBox from "../assets/serviceBox.svg";
 import serviceDiamond from "../assets/serviceDiamond.svg";
-
 import buttonArrow from "../assets/buttonArrow.svg";
-
 const ServiceSection: React.FC = () => {
   return (
     <div className="flex flex-wrap justify-center items-center relative">
@@ -56,6 +54,7 @@ const ServiceSection: React.FC = () => {
         <img src={buttonArrow} alt="" />
       </button>
     </div>
+
   );
 };
 

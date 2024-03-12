@@ -26,7 +26,7 @@ const Navbar: React.FC = () => {
   };
 
   return (
-    <nav className="flex flex-col md:flex-row justify-between items-center mt-6 text-customTextColour font-semibold text-base font-Open Sans">
+    <nav className="flex flex-col md:flex-row justify-between items-center mt-6 text-customTextColour font-semibold text-base font-Open-Sans">
       <div className="flex justify-between md:flex w-full">
         <Link to='/'>
         <img src={logo} alt="Logo" className="mr-4" />
