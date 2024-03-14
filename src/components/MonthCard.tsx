@@ -31,7 +31,7 @@ const trimText = (text: string, wordCount: number): string => {
 const MonthCard: React.FC<CardProps> = ({ book }) => {
   const mergedBook = { ...defaultBook, ...book };
   const { title, maturityRating, imageLinks } = mergedBook.volumeInfo!;
-  const trimmedTitle = trimText(title || "", 3);
+  const trimmedTitle = trimText(title || "", 2);
 
   return (
     <div className="flex justify-between">
